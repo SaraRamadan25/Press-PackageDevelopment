@@ -8,7 +8,20 @@
             "email": "sarahramadanelsayed@gmail.com"
         }
     ],
+    "require": {
+        "erusev/parsedown": "^1.7"
+    },
     "require-dev": {
         "orchestra/testbench": "^8.5"
+    },
+    "autoload": {
+        "psr-4": {
+            "SaraRamadan\\Press\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "SaraRamadan\\Press\\Tests\\": "tests/"
+        }
     }
 }
