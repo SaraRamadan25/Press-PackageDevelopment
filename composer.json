@@ -1,0 +1,14 @@
+{
+    "name": "sararamadan/press",
+    "description": "'An Elegant Markdown-Powered Blog for the Laravel Framework'",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "SaraRamadan25",
+            "email": "sarahramadanelsayed@gmail.com"
+        }
+    ],
+    "require-dev": {
+        "orchestra/testbench": "^8.5"
+    }
+}
