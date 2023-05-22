@@ -21,7 +21,7 @@
     },
     "autoload-dev": {
         "psr-4": {
-            "SaraRamadan\\Press\\Tests\\": "tests/"
+            "SaraRamadan\\Press\\Tests\\": "Tests/"
         }
     }
 }

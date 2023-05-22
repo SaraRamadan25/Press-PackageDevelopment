@@ -1,6 +1,6 @@
 <?php
 
-namespace SaraRamadan\Press\Tests;
+namespace SaraRamadan\Press\Tests\Feature;
 
 use Orchestra\Testbench\TestCase;
 use SaraRamadan\Press\MarkdownParser;
