@@ -2,6 +2,7 @@
 
 namespace SaraRamadan\Press\Tests\Feature;
 
+use Carbon\Carbon;
 use Orchestra\Testbench\TestCase;
 use SaraRamadan\Press\PressFileParser;
 
@@ -61,11 +62,11 @@ class PressFileParserTest extends TestCase
     /** @test */
 public function a_date_field_gets_parsed()
 {
-    $pressFileParser = new PressFileParser("---\ndate: May 14, 1988\n---\n");
+    $pressFileParser = (new PressFileParser("---\ndate: May 14, 1988\n---\n"));
 
     $data = $pressFileParser->getData();
 
-    $this->assertInstanceOf('Carbon\Carbon', $data['date']);
+    $this->assertInstanceOf(Carbon::class, $data['date']);
     $this->assertEquals('05/14/1988', $data['date']->format('m/d/Y'));
 }
 
