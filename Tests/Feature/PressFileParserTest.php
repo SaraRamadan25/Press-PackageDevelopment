@@ -60,6 +60,7 @@ class PressFileParserTest extends TestCase
         $this->assertEquals($expected, $actual);
     }
 
+
     /** @test */
 public function a_date_field_gets_parsed()
 {
