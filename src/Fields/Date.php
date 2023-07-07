@@ -7,12 +7,11 @@ use Carbon\Carbon;
 class Date
 {
 
-    public static function process($type, $value, $extra): array
+    public static function process($fieldType, $fieldValue, $data)
     {
         return [
-            $type => Carbon::parse($value),
+            $fieldType => Carbon::parse($fieldValue),
             'parsed_at' => Carbon::now(),
-            'foo' => 'bar',
         ];
     }
 }

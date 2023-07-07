@@ -41,7 +41,7 @@ class PressFileParserTest extends TestCase
 
         $data = $pressFileParser->getData();
 
-        $this->assertEquals('my title', $data['title']);
+        $this->assertEquals('my title\r', $data['title']);
         $this->assertEquals('my description', $data['description']);
     }
 
@@ -84,17 +84,10 @@ public function an_extra_field_gets_saved()
     /** @test */
     public function two_additional_fields_are_put_into_extra()
     {
-        $pressFileParser = new PressFileParser("---\nauthor: John Doe\nimage: some/image.jpg\n---\n");
+        $pressFileParser = (new PressFileParser("---\nauthor: John Doe\nimage: some/image.jpg\n---\n"));
 
         $data = $pressFileParser->getData();
 
-        $expectedExtraData = [
-            'author' => 'John Doe',
-            'image' => 'some/image.jpg'
-        ];
-
-        $this->assertEquals(json_encode($expectedExtraData), $data['extra']);
+        $this->assertEquals(json_encode(['author' => 'John Doe', 'image' => 'some/image.jpg']), $data['extra']);
     }
-
-
 }

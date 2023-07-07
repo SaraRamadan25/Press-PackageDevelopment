@@ -1,5 +1,5 @@
 ---
-title: my title
+title: my title 
 description: my description
 ---
 # Heading

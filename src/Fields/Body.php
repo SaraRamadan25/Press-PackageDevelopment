@@ -6,10 +6,10 @@ use SaraRamadan\Press\MarkdownParser;
 
 class Body
 {
-    public static function process($type, $value, $extra): array
+    public static function process($fieldType, $fieldValue, $data)
     {
         return [
-            $type => MarkdownParser::parse($value),
+            $fieldType => MarkdownParser::parse($fieldValue),
         ];
     }
 
