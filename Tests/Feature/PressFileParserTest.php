@@ -62,26 +62,26 @@ class PressFileParserTest extends TestCase
 
 
     /** @test */
-public function a_date_field_gets_parsed()
-{
-    $pressFileParser = (new PressFileParser("---\ndate: May 14, 1988\n---\n"));
+    public function a_date_field_gets_parsed()
+    {
+        $pressFileParser = (new PressFileParser("---\ndate: May 14, 1988\n---\n"));
 
-    $data = $pressFileParser->getData();
+        $data = $pressFileParser->getData();
 
-    $this->assertInstanceOf(Carbon::class, $data['date']);
-    $this->assertEquals('05/14/1988', $data['date']->format('m/d/Y'));
-}
+        $this->assertInstanceOf(Carbon::class, $data['date']);
+        $this->assertEquals('05/14/1988', $data['date']->format('m/d/Y'));
+    }
 
-/** @test */
-public function an_extra_field_gets_saved()
-{
-    $pressFileParser = (new PressFileParser("---\nauthor: John Doe\n---\n"));
+    /** @test */
+    public function an_extra_field_gets_saved()
+    {
+        $pressFileParser = (new PressFileParser("---\nauthor: John Doe\n---\n"));
 
-    $data = $pressFileParser->getData();
+        $data = $pressFileParser->getData();
 
-    $this->assertEquals(json_encode(['author' => 'John Doe']), $data['extra']);
+        $this->assertEquals(json_encode(['author' => 'John Doe']), $data['extra']);
 
-}
+    }
 
     /** @test */
     public function two_additional_fields_are_put_into_extra()
